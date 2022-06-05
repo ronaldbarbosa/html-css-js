@@ -11,9 +11,9 @@
     <div class="container">
         <div class="clock">
 
-            <div class="circle" id="sc" style="--clr: #04fc43"><i></i></div>
-            <div class="circle circle2" id="mn" style="--clr: #fee800"><i></i></div>
-            <div class="circle circle3" id="hr" style="--clr: #ff2972"><i></i></div>
+            <div class="circle" id="sc" style="--clr: #3d928f"><i></i></div>
+            <div class="circle circle2" id="mn" style="--clr: #5aaf9a"><i></i></div>
+            <div class="circle circle3" id="hr" style="--clr: #a5d0be"><i></i></div>
 
             <span style="--i:1"><b>1</b></span>
             <span style="--i:2"><b>2</b></span>
@@ -30,56 +30,13 @@
         </div>
         <!-- digital clock-->
         <div id="time">
-            <div id="hours" style="--clr: #ff2972">00</div>
-            <div id="minutes" style="--clr: #fee800">00</div>
-            <div id="seconds" style="--clr: #04fc43">00</div>
-            <div id="ampm" style="">AM</div>
+            <div id="hours" style="--clr: #a5d0be">00</div>
+            <div id="minutes" style="--clr: #5aaf9a">00</div>
+            <div id="seconds" style="--clr: #3d928f">00</div>
+            <div id="ampm">AM</div>
         </div>
     </div>
 
-
-    <script>
-        let hr = document.querySelector('#hr');
-        let mn = document.querySelector('#mn');
-        let sc = document.querySelector('#sc');
-
-        setInterval(() => {
-            let day = new Date;
-            let hh = day.getHours() * 30;
-            let mm = day.getMinutes() * 6;
-            let ss = day.getSeconds() * 6; 
-
-            hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
-            mn.style.transform = `rotateZ(${mm}deg)`;
-            sc.style.transform = `rotateZ(${ss}deg)`;
-
-            // digital clock
-            let hours = document.getElementById('hours');
-            let minutes = document.getElementById('minutes');
-            let seconds = document.getElementById('seconds');
-            let ampm = document.getElementById('ampm');
-
-            let h = new Date().getHours();
-            let m = new Date().getMinutes();
-            let s = new Date().getSeconds();
-
-            let am = h >= 12 ? "PM" : "AM";
-
-            // convert 24h clock to 12h clock
-            if (h > 12) {
-                h -= 12;
-            }
-
-            // add zero before single digit number
-            h = (h < 10) ? "0" + h : h;
-            m = (m < 10) ? "0" + m : m;
-            s = (s < 10) ? "0" + s : s;
-
-            hours.innerHTML = h;
-            minutes.innerHTML = m;
-            seconds.innerHTML = s;
-            ampm.innerHTML = am;
-        })
-    </script>
+    <script src="./assets/javascript/script.js"></script>
 </body>
 </html>

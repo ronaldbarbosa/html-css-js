@@ -18,7 +18,6 @@ body {
 .container {
     position: relative;
     background: #2f363e;
-    /*min-height: 500px;*/
     border-radius: 20px;
     border-top-left-radius: 225px;
     border-top-right-radius: 225px;
@@ -55,7 +54,7 @@ body {
     width: 8px;
     height: 8px;
     background: #2f363e;
-    border: 3px solid #fff;
+    border: 3px solid #f6f6ee;
     border-radius: 50%;
     z-index: 100000;
 }
@@ -63,7 +62,7 @@ body {
 .clock span {
     position: absolute;
     inset: 20px;
-    color: #fff;
+    color: #f6f6ee;
     text-align: center;
     transform: rotate(calc(30deg * var(--i)));
 }
@@ -80,7 +79,7 @@ body {
     position: absolute;
     width: 300px;
     height: 300px;
-    border: 2px solid rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.25);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -167,7 +166,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #f6f6ee;
 }
 
 #time div:nth-child(2)::after {
