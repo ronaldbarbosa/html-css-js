@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video and JavaScript</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="container-flex">
+        <div class="main-title">
+            <h1>Video controls with JavaScript</h1>    
+        </div>
+        <div class="container" onmouseenter="show()" onmouseleave="hide()">
+            <video src="./assets/video/lake.mp4" class="video" id="video"></video>
+            <div class="controls">
+                <img class="btn" onclick="decrease()" src="./assets/image/decrease.png" alt="decrease">
+                <img class="btn" onclick="increase()" src="./assets/image/increase.png" alt="increase">
+                <img class="btn" onclick="lowew()" src="./assets/image/minus.png" alt="minus">
+                <img class="btn" onclick="faster()" src="./assets/image/plus.png" alt="plus">
+                <img class="btn" id="img" onclick="play()" src="./assets/image/play.png" alt="play">
+                <img class="btn" onclick="stop()" src="./assets/image/stop.png" alt="stop">
+            </div>
+            <div class="info"></div>
+        </div>
+    </div>
+    <script src="./assets/script/script.js"></script>
+</body>
+</html>
