@@ -52,6 +52,7 @@ function flipCard() {
     if (game.setCard(this.id)) {
         this.classList.add(FLIP);
         if (game.secondCard) {
+            updateMoves();
             if (game.checkMatch()) {
                 game.clearCards();
                 if (game.checkGameOver()) {
@@ -67,15 +68,32 @@ function flipCard() {
                     secondCardView.classList.remove(FLIP);
                     game.unflipCards();
                 }, 1000);
-
             };
         }
     }
 }
 
 function restart() {
+    game.currentScore = game.moves;
+    if(!game.bestScore) game.bestScore = game.currentScore;
+    else {
+        if (game.currentScore < game.bestScore) game.bestScore = game.currentScore;
+    }
     game.clearCards();
+    game.moves = 0;
+    updateMoves();
     startGame();
+    updateBestScore();
     let gameOverLayer = document.getElementById('game-over');
     gameOverLayer.style.display = 'none';
+}
+
+function updateMoves() {
+    moves = document.getElementById('number-moves');
+    moves.innerHTML = `Moves: ${game.moves}`;
+}
+
+function updateBestScore() {
+    bestScore = document.getElementById('best-score');
+    bestScore.innerHTML = `Best score: ${game.bestScore} moves`;
 }

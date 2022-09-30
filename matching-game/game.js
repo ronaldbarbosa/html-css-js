@@ -2,6 +2,9 @@ let game = {
     lockMode: false,
     firstCard: null,
     secondCard: null,
+    moves: 0,
+    currentScore: null,
+    bestScore: null,
 
     techs: [
         'bootstrap',
@@ -20,7 +23,6 @@ let game = {
 
     setCard: function (id) {
         let card = this.cards.filter(card => card.id === id)[0];
-        console.log(card)
         if (card.flipped || this.lockMode) return false;
         if (!this.firstCard){ 
             this.firstCard = card;
@@ -30,6 +32,7 @@ let game = {
             this.secondCard = card;
             this.secondCard.flipped = true;
             this.lockMode = true;
+            this.moves++;
             return true;
         }
     },
